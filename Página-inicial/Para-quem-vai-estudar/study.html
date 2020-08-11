@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt_br">    <!--lang é um atributo q define a linguagem usada no html-->
+<head>
+    <meta charset="UTF-8"> <!--charset e o tipo de texto utilizado na pagina, nesse caso utf-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--vai adaptar a pagina para telas maiores ou menores-->
+    <title>Proffy | Sua plataforma de estudos online </title> <!-- para nomear o titulo do documento, nesse caso ta document poederia mudar para qual desejar-->
+   
+    <link rel="stylesheet" href="/styles/main.css">
+    <!--para a página de registro-->
+    <link rel="stylesheet" href="/styles/Partials/header.css">
+    <!--link configuração dos formulários-->
+    <link rel="stylesheet" href="/styles/Partials/forms.css">
+    <link rel="stylesheet" href="/styles/Partials/page-study.css">
+
+
+<!--este link esta buscando no google fonte as fontes que iremos usar.-->
+    <link href="https://fonts.googleapis.com/css2?
+    family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;
+    display=swap" rel="stylesheet">
+
+</head>
+<body id ="page-study">
+
+    
+    <div id ="container">
+        <header class="page-header">
+            <div class="top-bar-container">
+                <a href="/">
+                <img src="/images/icons/back.svg" alt="voltar">
+                </a>
+                <img src="/images/logo.svg" alt="Proffy">
+            </div>
+
+            <div class="header-content">
+                <strong>Esses são os proffys disponíveis</strong>
+                <form id="search-teachers">
+                    <div class="select-block">
+                        <label for="subject">Matéria</label>
+                        <select name="subject" id="subject">
+                            <option value="" disabled="" hidden="">Selecione uma opção</option>
+                            <option value="1">Artes</option>
+                            <option value="2">Biologia</option>
+                            <option value="3">Ciências</option>
+                            <option value="4">Educação física</option>
+                            <option value="5">Física</option>
+                            <option value="6">Geografia</option>
+                            <option value="7">História</option>
+                            <option value="8">Matemática</option>
+                            <option value="9">Português</option>
+                            <option value="10">Química</option>
+                        </select>
+                    </div>
+
+                    <div class="select-block">
+                        <label for="weekday">Dia da semana</label>
+                        <select name="weekday" id="weekday">
+                            <option value="" disabled="" hidden="">Selecione uma opção</option>
+                            <option value="0">Domingo</option>
+                            <option value="1">Segunda-feira</option>
+                            <option value="2">Terça-feira</option>
+                            <option value="3">Quarta-feira</option>
+                            <option value="4">Quinta-feira</option>
+                            <option value="5">Sexta-feira</option>
+                            <option value="6">Sábado</option>
+                        </select>
+                    </div>
+                    <div class="input-block">
+                        <label for="time">Hora</label>
+                        <input name="time" id="time" type="time" >
+                    </div>
+                    <button type="submit">Filtrar</button>
+                </form>
+            </div>
+        </header>
+        <!--main,conteudo principal-->
+        <main>
+            <article class="teacher-item">
+                <header>
+                    <img 
+                        src="https://avatars2.githubusercontent.com/u/2254731?s=460&amp;u=0ba16a79456c2f250e7579cb388fa18c5c2d7d65&amp;v=4" 
+                        alt="Diego Fernandes">
+                    <div>
+                        <strong>Diego Fernandes</strong>
+                        <span>Química</span>
+                    </div>
+                </header>
+            
+                <p>Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões.s</p>
+            
+                <footer>
+                    <p>Preço/hora<strong>R$ 20,00</strong>
+                    </p>
+                    <button type="button">
+                        <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
+                    </button>
+                </footer>
+            </article>
+
+            <!--segundo professor-->
+            <article class="teacher-item">
+                <header>
+                    <img 
+                        src="https://avatars2.githubusercontent.com/u/61853617?s=460&u=1693751c647d2c209fc160b7c535000cf92e63fb&v=4" 
+                        alt="José Ricardo">
+                    <div>
+                        <strong>José Ricardo</strong>
+                        <span>Lógica de programação</span>
+                    </div>
+                </header>
+            
+                <p>Acadêmico de Analise é desenvonvimento de sistemas no Instituto Federal do Piauí.<br><br>Apaixonado por tecnologia é ciência voltada á pesquisas científicas. Gosto de ensinar é aprender. É sempre estou buscando me aperfeiçoar.</p>
+            
+                <footer>
+                    <p>Preço/hora<strong>R$ 25,00</strong>
+                    </p>
+                    <button type="button">
+                        <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
+                    </button>
+                </footer>
+            </article>
+        </main>
+    </div>
+
+</body>
+</html>
+
+
