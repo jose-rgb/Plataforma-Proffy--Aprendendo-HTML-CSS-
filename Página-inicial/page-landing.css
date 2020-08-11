@@ -1,0 +1,144 @@
+#page-landing {
+    background: var(--color-primary);
+}
+
+#page-landing #container {
+    color: var(--color-text-in-primary);
+}
+
+.logo-container {
+    text-align: center;       /*texto alinhado ao centro*/
+    margin-bottom: 3.2rem;    /*inserindo uma margin embaixo da div logo container*/
+}
+
+.logo-container img {
+    height: 10rem;        /*altura da img*/
+}
+
+.logo-container h2 {
+    font-weight: 500;   /*peso da fonte*/
+    font-size: 3.6rem;  /*tamanho da fonte*/
+    line-height: 4.6rem; /*altura da linha do texto*/
+    margin-top: 0.8rem;  /*margem no topo*/
+}
+  
+.hero-image {
+    width: 100%;         /*largura de 100%  de 90vw pois foi a largura
+                        determinada no container*/
+}
+
+/*css dos botões*/
+.buttons-container {
+    display: flex;            /*para ficar um do lado do outro*/
+    justify-content: center;  /*para ficar centralizado*/
+    margin: 3.2rem 0;         /*espacamento em cima 3.2 e nas laterais 0*/
+}
+
+.buttons-container a {
+    width: 30rem;         /*largura*/
+    height: 10.4rem;     /*altura*/
+    border-radius: 0.8rem;  /*arredondar as bordas da caixa*/
+    margin-right: 1.6rem;  /*margem direita*/
+    font: 700;
+    font-size: 2.4rem;
+    font-family: Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;   /*remover as linhas de baixo dos nomes*/
+    transition: background 0.2s;  /*esta relacionado a linha 65 e 74 (:hover)*/
+    color: var(--color-button-text);
+    
+}
+
+.buttons-container img {
+    width: 4rem;
+    margin-right: 2.4rem; /*separando nome e img do botão*/
+}
+
+.buttons-container a.study {
+    background: var(--color-primary-lighter);
+}
+
+.buttons-container a.study:hover {           /* :hover e só quando o mause estiver dentro do botão*/
+    background: var(--color-primary-light);  /*muda a cor levemente*/
+}
+
+.buttons-container a.give-classes {
+    background: var(--color-secondary);
+    margin-right: 0;      /*retirando a margem do botão direito, para alinhar*/
+}
+
+.buttons-container a.give-classes:hover {
+    background: var(--color-secondary-dark);
+}
+
+/*total de acessos*/
+.total-connections {
+    font-size: 1.8rem;
+
+    display: flex;             /*tem q mecher no display flex...*/
+    align-items: center;       /*para alinhar o s2 com o txt*/
+    justify-content: center;
+}
+
+.total-connections img  {
+    margin-left: 0.8rem;     /*separando a img do txt*/
+}
+
+/*css para tela com largura maxima de 699 pixels*/
+@media (max-width: 699px) {
+    :root {
+        font-size: 40%;
+    }
+}
+
+/* css para desktop*/
+
+@media (min-width: 1100px) {
+    #page-landing #container {
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 350px 1fr;
+        grid-template-areas: 
+        "proffy image image"       /*proffy vai ficar no 2fr, img no 1fr e img no 2fr*/
+        "button button texting";   /*button vai ficar no 2fr, button no 1fr e texting no 2fr*/
+        /*gap: 60px; deu uma pequena diferença,portanto*/
+        column-gap: 87px;
+        row-gap: 86px; 
+       
+        
+    }
+
+    /*colocando em lugares estrategicos*/
+    .logo-container {
+        grid-area: proffy;    /*grid-area, definindo onde o elemento vai ficar*/
+        text-align: initial;  /*alinhando texto ao inicio*/
+        align-self: center;   /*todo conteudo dele mesmo está alinhado ao centro, respeitando o grid*/
+        margin: 0;
+    }
+
+    .logo-container img {
+        height: 127px;       /*altura da imagen proffy*/
+    }
+
+    .hero-image {
+        grid-area: image;
+        height: 350px;   
+    }
+
+    .buttons-container {
+        grid-area: button;
+        justify-content: flex-start;  /*alinhando os botões em relação ao grid, gap 60px*/
+        margin: 0; 
+    }
+
+    .total-connections {
+        grid-area: texting;
+        justify-self: end;    /*alinhando o tatal de conexões ao final do grid, gap 60px*/
+        font-size: 1.2rem;
+    }
+}
