@@ -1,0 +1,211 @@
+#page-study #container {
+    width: 100vw;
+    height: 100vh;
+}
+
+#search-teachers {
+    margin-top: 3.2rem;
+}
+
+#search-teachers label { 
+    color: var(--color-text-in-primary);
+}
+
+#search-teachers .select-block {
+    margin-bottom: 1.4rem;
+}
+
+#search-teachers button {
+    width: 100%;
+    height: 5.6rem;
+    background: var(--color-secondary);  /*cor de fundo*/
+    color: var(--color-button-text);     /*cor do txt*/
+    border: 0;                          /*tirando a borda*/
+    border-radius: .8rem;               /*arredondando a borda*/
+    cursor: pointer;                 /*quando passa o mause em cima vira uma mão*/ 
+    font: 700 1.6rem Archivo;        /*configurando a fonte*/
+    display: flex;
+    align-items: center;
+    justify-content: center;      /*para o botão ficar no meio*/
+    
+    transition: background 0.2s;  /*para fazer uma transição da cor de fundo*/
+    margin-top: 3.2rem;
+}
+
+/*quando fazer a transição vai ficar desssa cor*/
+#search-teachers button:hover {
+    background-color: var(--color-secondary-dark); 
+}
+
+/*Css para main,conteudo principal*/
+#page-study main {
+    margin: 3.2rem auto;  /*margem de baixo e cima 3.2 e dos lados automático*/
+    width: 90%;
+}
+
+.teacher-item {
+    background-color: var(--color-box-base);
+    border: 1px solid var(--color-line-in-white);
+    border-radius: 0.8rem;
+    margin-top: 2.4rem;
+}
+
+.teacher-item header {
+    padding: 3.2rem 2rem;   /*preenchimento de 3.2 em cima e bx é 2 nas laterai*/
+    display: flex;          /*coloca txt ao lado da img*/
+    align-items: center;    
+}
+
+/*arredondando a img*/
+.teacher-item header img {
+    width: 8rem;      /*quando a img é um quadrado perfeito 8 de altura + 8 de largura*/
+    height: 8rem;     /*basta colocar as bordas-radius em 50%*/
+    border-radius: 50%;
+}
+
+/*configurando nome do prf e máteria*/
+.teacher-item header div {
+    margin-left: 2.4rem;  /*margem a esquerda dos txt*/
+}
+
+.teacher-item header div strong {
+    font: 700 2.4rem Archivo;
+    display: block;            /*para ocupar a linha toda,pois inline permite txt ao lado*/
+    color: var(--color-text-title);
+}
+
+.teacher-item header div span {
+    font-size: 1.6rem;
+    display: block;
+    margin-top: 1.4rem;  /*para dar espaço no topo e o nome do prof*/
+}
+
+/*configurando a descriçao do prof*/
+.teacher-item > p {                /* >p está pegando primeiro nivrl da tag p*/
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+}
+
+/*configurando a parte do preço e contato*/
+.teacher-item footer {
+    padding: 3.2rem 2rem;
+    background-color: var(--color-box-footer);
+    border-top: 1px solid var(--coor-line-in-white);
+    margin-top: 3.2rem;
+
+    display: flex;         /*um do lado do outro*/
+    align-items: center;   /*os 2 no centro no eixo x*/
+    justify-content: space-between;   /*um vai para a direita e outro para esquerda*/
+}
+
+.teacher-item footer p {
+    font-size:  1.4rem;
+    line-height: 2.4rem;
+    color: var(--color-text-complement);
+}
+
+.teacher-item footer strong {
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    display: block;         /*para txt quebrar linha em mobile*/
+}
+
+/*configurando o botão*/
+.teacher-item footer button {
+    width: 20rem;
+    height: 5.6rem;
+    background: var(--color-secondary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: .8rem;
+    cursor: pointer;
+    font: 700 1.4rem Archivo;
+
+    display: flex;
+    align-items: center;            /*alinhando img do botão*/
+    justify-content: space-evenly; /*os espaçamentos entre os itens são constantes*/
+
+    text-decoration: none; /*tirando qualquer decoração*/
+
+    transition: background 0.2s;  /*transição cor de fundo*/
+    margin-left: 1.6rem;
+}
+
+.teacher-item footer button:hover {
+    background: var(--color-secondary-dark);   /*cor de fundo na transição*/
+}
+
+/*configurando á página para desktop*/
+@media (min-width: 700px) {
+    #page-study #container {
+        max-width: 100vw;
+    }
+
+    .page-header {
+        height: 340px;
+    }
+
+    .page-header .top-bar-container {
+        max-width: 1100px;
+    }
+
+    .page-header .header-content {
+        max-width: 740px;
+
+        margin: 0 auto;
+
+        flex: 1 1;
+        padding-bottom: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .page-header .header-content strong {
+        max-width: 350px;
+    }
+
+    .teacher-item header,
+    .teacher-item footer {
+        padding: 32px;
+    }
+    /*configurando para que os botões fiquem um do lado do outro*/
+    #search-teachers { 
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        position: absolute;    /*fica absoluto com a página toda*/
+        bottom: -28px;
+    }
+
+    #page-study main {
+        padding: 32px 0; 
+        max-width: 740px;
+        margin: 0 auto; 
+    }
+    
+    #search-teachers .select-block {
+        margin-bottom: 0;
+    }
+
+    .teacher-item  > p {          /* >p esta pegando somente primeiro nivel de P*/
+        padding: 0 32px;
+    }
+
+    .teacher-item footer p strong {
+        display: initial;
+        margin-left: 16px;
+    }
+
+    .teacher-item .footer button {
+        width: 245px;
+        font-size: 16px;
+        justify-content: center;   /*juntou a img com txt*/
+    }
+
+    .teacher-item .footer button img {
+        margin-right: 16px;
+    }
+}
+
