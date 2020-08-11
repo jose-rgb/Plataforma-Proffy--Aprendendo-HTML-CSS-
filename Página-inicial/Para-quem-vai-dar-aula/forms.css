@@ -1,0 +1,53 @@
+/*RETIRADO DO PAGE-STUDY LINHA 40*/
+.select-block label, 
+.input-block label,
+.textarea-block label {
+    font-size: 1.4rem;
+    color: var(--color-text-complement);
+}
+
+.input-block input,
+.select-block select,
+.textarea-block textarea {                                          /*para configurar a biografia*/
+    width: 100%;                                                   /*largura de 100%*/
+    height: 5.6rem;                                               /*altura*/
+    margin-top: 0.8rem;                                          /*separação do topo para o nome*/
+    border-radius: 0.8rem;                                      /*arredondamento das bordas*/
+    background: var(--color-input-background);                 /*cor de fundo*/
+    border: 1px solid var(--color-line-in-white);             /*uma linha em volta do botão*/
+    outline: 0;                                              /*tirando a cor forte que aparece quando o botão está selecionado*/
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
+}
+
+/*configurando a bio*/
+.textarea-block textarea {
+    padding: 1.2rem 1.6rem;
+    height: 16rem;
+
+    /*retirando a opção de mecher na cx da bio*/
+    resize: vertical;    /*vai mecher somente na vertical*/
+} 
+
+.input-block,
+.textarea-block {
+    position: relative;
+}
+
+/*já que tiramos o outline tem q fazer outro tipo para acessibilidade*/
+/*:focus-within= quando o botão tiver em foco, procurar o input block, ai no .input-block coloque um after*/
+/*um elemento html, obs:somente quando o botão estiver em foco*/
+.input-block:focus-within::after,
+ .textarea-block:focus-within::after{
+    content: "";                   /*e obrigado ter um content vazio*/
+   
+    /*elemento after*/
+    width: calc(100% - 3.2rem);  /*calculo de 100% do espaço do elemento, subtrair 3.2rem*/ 
+    height: 2px;
+    background: var(--color-primary-light);
+    
+    position: absolute;   
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 0;
+}
